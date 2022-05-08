@@ -2,8 +2,11 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Scanner scan = new Scanner(System.in);
+        // 배경음악
+
+
         //게임시작
         System.out.println("██╗  ██╗ ██████╗ ███╗   ███╗███████╗     ██████╗ █████╗ ████████╗\n" +
                 "██║  ██║██╔═══██╗████╗ ████║██╔════╝    ██╔════╝██╔══██╗╚══██╔══╝\n" +
@@ -11,46 +14,79 @@ public class Main {
                 "██╔══██║██║   ██║██║╚██╔╝██║██╔══╝      ██║     ██╔══██║   ██║   \n" +
                 "██║  ██║╚██████╔╝██║ ╚═╝ ██║███████╗    ╚██████╗██║  ██║   ██║   \n" +
                 "╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝     ╚═════╝╚═╝  ╚═╝   ╚═╝");
+        // 음악 출처 : 오늘의 일기
+        Music introMusic = new Music("Oneul+-+Happy+Avocado.mp3",true);
+        introMusic.start();
 
 
-
+        Thread.sleep(1000);
         System.out.println("▶ 도전! 집냥이");
+        Thread.sleep(1000);
         System.out.println("▶ 고양이들이 사는 마을로 출발합니다!");
+        Thread.sleep(25);
+        System.out.println("○ 。\n" +
+                "。 ┏━━┓  ○\n" +
+                " ┏┛ㅁㅁ┗┓\n" +
+                " ┗＠━━＠┛");
+        System.out.println("");
         // 마을 이름
         String nameTown;
         // 마을 이름 정하기
         System.out.println("▶ 어떤 마을에 갈까요?");
+        Thread.sleep(25);
         System.out.println("▶ 마을 이름을 정해주세요");
+        Thread.sleep(25);
         while(true){
             nameTown = scan.next();
             System.out.println("마을 이름을 "+nameTown+"로 정하시겠습니까?");
+            Thread.sleep(25);
             System.out.println("1. 네");
             System.out.println("2. 아니오 다시 정할래요");
             int answer_TownName = scan.nextInt();
             if(answer_TownName == 1){
+                Thread.sleep(25);
                 System.out.println(nameTown+"마을로 갑니다!");
                 break;
             }
             else{
+                Thread.sleep(25);
                 System.out.println("마을 이름을 다시 정해주세요!");
             }
         }
-        // 마을 가는 중....
+        //마을 가는 중.... 로딩 스레드 넣기
+        Thread.sleep(1000);
+        System.out.println("");
+        String loading;
+        loading ="▶▶▶▶▶▶▶▶▶▶▶▶▶▶마을 가는 중▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶";
+
+        for (int i = 0; i < loading.length(); i++) { // 로딩 효과 스레드
+            Thread.sleep(20);
+            System.out.print( loading.charAt(i) );
+        }
+        Thread.sleep(100);
+        System.out.println("\n");
+        Thread.sleep(100);
         System.out.println(nameTown+"마을에 도착했습니다!");
+        Thread.sleep(100);
+        System.out.println("엇 저기 상자에 무언가가 있는 것 같습니다.");
         // 고양이 고르기
         System.out.println("　 ＿＿ ∧ ∧\n" +
                 " ／＼　 (*ﾟ∀ﾟ)＼\n" +
                 " ＼／|￣￣∪ ∪￣|＼\n" +
                 "　＼|　　〓〓　 |\n" +
                 "　　 ￣￣￣￣￣");
-        System.out.println("엇 저기 상자에 무언가가 있는 것 같습니다.");
         System.out.println("가까이 가보니 고양이 세마리가 있네요.");
+        Thread.sleep(100);
         System.out.println("이 중 한마리를 골라봅시다!");
+        Thread.sleep(100);
         System.out.println("고양이 별로 행동 특성이 다릅니다.");
         System.out.println("신중하게 생각해주세요");
         System.out.println("1. 치즈 고양이   (＾• ω •＾)");
+        System.out.println("기본기술 : 꾹꾹이, 특수기술 : ???, 체력 : 50, 게으른 고양이");
         System.out.println("2. 삼색 고양이   (=◉ᆽ◉=)");
+        System.out.println("기본기술 : 배 보여주기, 특수기술 : ???, 체력 : 50, 건강한 고양이");
         System.out.println("3. 턱시도 고양이  (=\uD83D\uDF66 ༝ \uD83D\uDF66=)");
+        System.out.println("기본기술 : 얼굴 비비기, 특수기술 : ???, 체력 : 50, 운이 좋은 고양이");
 
         int answer_Cat = scan.nextInt();
         // 고양이 생성
@@ -76,16 +112,34 @@ public class Main {
         kid kid = new kid(cat);
         worker worker = new worker(cat);
         puppy puppy = new puppy(cat);
-
+        // 게임 설명 타이핑 효과
+        String explain = "----------------게임설명---------------- \n\n"+
+                "▶ 고양이가 되어 집사를 간택해보세요\n\n"+
+                "▶ 집사가 될 수 있는 마을 사람들은 지도에서 확인할 수 있습니다 \n\n"+
+                "▶ 지도를 통해서 마을 사람들이 있는 곳에 가보세요!\n\n"+
+                "▶ 마을 사람들의 호감도를 채우면 미니게임에 도전할 수 있습니다.\n\n" +
+                "▶ 미니게임을 성공하면 집사로 간택할 수 있습니다\n\n" +
+                "▶ 마을을 돌아다니다 보면 체력이 떨어집니다.\n\n" +
+                "▶ 상자에서 낮잠을 자거나 간식을 먹으면 체력을 채울 수 있습니다.\n\n" +
+                "▶ 그럼 일주일동안 화이팅하세요!! \n\n"+
+                "------------------------------------- \n\n";
+        for (int i = 0; i < explain.length(); i++) {
+            Thread.sleep(50);
+            System.out.print(explain.charAt(i));
+        }
+        // 인트로 뮤직 끝내기
+        introMusic.close();
+        ThreadTimer timer = new ThreadTimer(); // 시간 표시
         // 게임 진행 메뉴얼
+        cat.start();
         while(true){
-            System.out.println("---------홈 메뉴--------");
+            System.out.println("╔════   •| ✿ |•   ════╗");
             System.out.println("    1. 지도열기");
             System.out.println("    2. 아이템 주머니 열기");
             System.out.println("    3. 상자로 돌아가기");
             System.out.println("    4. 게임 설명 보기");
             System.out.println("    5. 게임 종료하기");
-            System.out.println("-----------------------");
+            System.out.println("╚════   •| ✿ |•   ════╝");
             int answer_menu = scan.nextInt();
 
             switch (answer_menu){
@@ -321,10 +375,13 @@ public class Main {
                         case 2:
                             // 낮잠자기
                             cat.napping();
+                            //Thread.sleep();
+
                             break;
                         case 3:
                             // 깊은 잠자기
                             cat.sleeping();
+
                             break;
                     }
                     break;

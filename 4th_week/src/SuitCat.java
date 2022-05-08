@@ -5,7 +5,7 @@ public class SuitCat extends Cat{
     @Override
     public void show() {
         name = "턱시도 고양이";
-        skill = "배 보여주기";
+        skill = "얼굴 비비기";
         hp = 40;
         System.out.println("▶ " + name + "를 선택하셨습니다!");
         System.out.println("▶ "+name+"는 "+skill+"를 할 수 있습니다!");
@@ -25,7 +25,7 @@ public class SuitCat extends Cat{
         }
         else {
             System.out.println("ฅ(• ɪ •)ฅ");
-            System.out.println("배 보여주기를 했습니다.");
+            System.out.println("얼굴 비비기를 했습니다.");
             hp = hp - heartUp;
             System.out.println("체력이 "+(heartUp)+"감소했습니다.");
             System.out.println("현재 체력은 "+hp+"입니다.");

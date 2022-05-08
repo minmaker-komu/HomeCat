@@ -11,7 +11,7 @@ public class ThreeColorsCat extends Cat {
     @Override
     public void show() {
         name = "삼색 고양이";
-        skill = "얼굴 비비기";
+        skill = "배 보여주기";
         hp = 60;
         System.out.println("▶ " + name + "를 선택하셨습니다!");
         System.out.println("▶ "+name+"는 "+skill+"를 할 수 있습니다!");
@@ -31,7 +31,7 @@ public class ThreeColorsCat extends Cat {
         }
         else {
             System.out.println("（=´∇｀=）");
-            System.out.println("얼굴 비비기를 했습니다.");
+            System.out.println("배 보여주기를 했습니다.");
             hp = hp - heartUp;
             System.out.println("체력이 "+(heartUp)+" 감소했습니다.");
             System.out.println("현재 체력은 "+hp+"입니다.");

@@ -115,6 +115,8 @@ public class Cat extends Character{
                 "／　└-(＿＿＿_／\n" +
                 "￣￣￣￣￣￣￣");
         System.out.println("▶ 낮잠을 잤습니다. 고양이의 체력은 "+hp+"가 됐습니다.");
+
+        //Thread.sleep(300000);
     }
     // 깊은 잠자기
     public void sleeping(){
@@ -130,6 +132,26 @@ public class Cat extends Character{
                 "／　└-(＿＿＿_／\n" +
                 "￣￣￣￣￣￣￣");
         System.out.println("▶ 깊은잠을 잤습니다. 고양이의 체력은 "+hp+"가 됐습니다.");
+
+    }
+
+    // 고양이 체력 자동 줄어들기
+    public void run(){
+        while (hp<=100){
+            try {
+                if(hp == 0){
+                    System.out.println("체력이 부족합니다.");
+                    break;
+                }
+                else {
+                    hp = hp - 1;
+                }
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
     }
 
 }

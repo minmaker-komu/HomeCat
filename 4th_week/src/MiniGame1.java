@@ -1,9 +1,11 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class MiniGame1 {
+public class MiniGame1 extends Thread {
+    public boolean inputCheck;
     Scanner scan = new Scanner(System.in);
     Random random = new Random();
+    // 게임 결과
     int result = 0;
     int play(){
         // 가위바위보 게임
@@ -12,7 +14,7 @@ public class MiniGame1 {
         if(randomNum < 10){
             rsp = "가위";
         }
-        else if(randomNum < 20){
+        else if(randomNum < 20 && randomNum > 10){
             rsp = "바위";
         }
         else {
@@ -24,6 +26,7 @@ public class MiniGame1 {
         System.out.println("2. 바위");
         System.out.println("3. 보");
         int answer1 = scan.nextInt();
+        inputCheck = true;
         switch (answer1){
             case 1:
                 if(rsp.equals("가위")){
