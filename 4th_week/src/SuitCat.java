@@ -36,32 +36,28 @@ public class SuitCat extends Cat{
     // 고양이 고유 기술 간식 기술
     // 운이 좋은 고양이
     // 호감도를 높이지 않아도 작은 간식을 얻을 수 있다.
-    public void snackSkill(){
+    public void special_skill(){
+        System.out.println("$$$$$$");
         // 땅에서 간식 줍기
         Random rand = new Random();
-        int randSnack = rand.nextInt(40);
-        if(randSnack <10){
+        int randSnack = rand.nextInt(20);
+        if(randSnack < 8){
             System.out.println("운이 좋으시네요~!!");
             System.out.println("땅에서 간식을 발견했습니다!!");
             item = new jurkey("육포",20);
             items.add(item);
             item.show_item();
         }
-        else if (randSnack < 20){
-            item = new jurkey("육포",20);
+        else if (randSnack < 18 && randSnack >12){
+            System.out.println("운이 좋으시네요~!!");
+            System.out.println("땅에서 간식을 발견했습니다!!");
+            item = new jurkey("츄르",20);
             items.add(item);
             item.show_item();
 
         }
-        else if(randSnack < 30){
-            item = new jurkey("육포",20);
-            items.add(item);
-            item.show_item();
-        }
-        else if(randSnack < 40){
-            item = new jurkey("육포",20);
-            items.add(item);
-            item.show_item();
+        else {
+            return;
         }
     }
 }

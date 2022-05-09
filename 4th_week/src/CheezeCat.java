@@ -37,7 +37,8 @@ public class CheezeCat extends Cat{
     // 고양이 고유의 기술
     // 게으른 고양이
     // 식빵 굽기 // 잠을 자도 시간이 안간다.
-    public void breadSkill(){
+    public void special_skill(){
         // 자고 일어나도 시간이 가지않게
+
     }
 }

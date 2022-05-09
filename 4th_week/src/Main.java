@@ -101,6 +101,7 @@ public class Main {
                 // 삼색 고양이
                 cat = new ThreeColorsCat();
                 cat.show();
+                cat.special_skill();;
                 break;
             case 3:
                 // 턱시도 고양이
@@ -131,8 +132,19 @@ public class Main {
         introMusic.close();
         ThreadTimer timer = new ThreadTimer(); // 시간 표시
         // 게임 진행 메뉴얼
+        // 체력 자동 줄어들기
         cat.start();
         while(true){
+            // 일주일 지나면 게임 종료
+            if(timer.day()==7) {
+                System.out.println("\n\n\n");
+                System.out.println("일주일이 지났습니다.\n\n");
+                System.out.println("고양이는 집사를 찾지 못했습니다.");
+                System.out.println("마을 고양이로 살아가세용");
+                System.exit(0);
+            }
+            Music menuMusic = new Music("Pepperoni+Pizza.mp3",true);
+            menuMusic.start();
             System.out.println("╔════   •| ✿ |•   ════╗");
             System.out.println("    1. 지도열기");
             System.out.println("    2. 아이템 주머니 열기");
@@ -141,12 +153,15 @@ public class Main {
             System.out.println("    5. 게임 종료하기");
             System.out.println("╚════   •| ✿ |•   ════╝");
             int answer_menu = scan.nextInt();
-
+            menuMusic.close();
             switch (answer_menu){
                 // 지도 열기
                 case 1:
                     System.out.println("▶ 지도를 열었다.");
                     System.out.println("▶ 어디로 갈까?");
+                    if(cat.name.equals("턱시도 고양이")){
+                        cat.special_skill();
+                    }
                     System.out.println("--------지도-------");
                     System.out.println("    1. 상점가");
                     System.out.println("    2. 주택가");
@@ -157,6 +172,8 @@ public class Main {
                     int answer_place = scan.nextInt();
                     switch (answer_place){
                         case 1:
+                            Music storeMusic = new Music("Dance+Dance.mp3",true);
+                            storeMusic.start();
                             // 상점가
                             System.out.println("▶ 상점가입니다.");
                             System.out.println("1. 선물 찾기");
@@ -194,8 +211,11 @@ public class Main {
                                     }
                                     break;
                             }
+                            storeMusic.close();
                             break;
                         case 2:
+                            Music houseMusic = new Music("Fig+Yogurt.mp3",true);
+                            houseMusic.start();
                             // 주택가
                             System.out.println("▶ 주택가입니다.");
                             System.out.println("1. 선물 찾기");
@@ -233,9 +253,11 @@ public class Main {
                                     }
                                     break;
                             }
-
+                            houseMusic.close();
                             break;
                         case 3:
+                            Music downTownMusic = new Music("08+Oneul+-+Subway+Travel.mp3",true);
+                            downTownMusic.start();
                             // 도심
                             System.out.println("▶ 도심입니다.");
                             System.out.println("1. 선물 찾기");
@@ -274,8 +296,11 @@ public class Main {
                                     }
                                     break;
                             }
+                            downTownMusic.close();
                             break;
                         case 4:
+                            Music parkMusic = new Music("Oneul+-+Tangerine+Dance.mp3",true);
+                            parkMusic.start();
                             // 공원
                             System.out.println("▶ 공원입니다.");
                             System.out.println("1. 선물 찾기");
@@ -314,10 +339,13 @@ public class Main {
                                     }
                                     break;
                             }
+                            parkMusic.close();
                     }
                     break;
                 // 아이템 주머니 열기
                 case 2:
+                    Music pocketMusic = new Music("oneul+-+Winter+Glow.mp3",true);
+                    pocketMusic.start();
                     System.out.println("▶ 주머니 속에 뭐가 있는지 확인해봅시다!");
                     System.out.println("1. 간식 확인하기");
                     System.out.println("2. 선물 확인하기");
@@ -356,12 +384,12 @@ public class Main {
                             }
                             break;
                     }
-
-
-
+                    pocketMusic.close();
                     break;
                 // 상자로 돌아가기
                 case 3:
+                    Music boxMusic = new Music("상자.mp3",true);
+                    boxMusic.start();
                     System.out.println("▶ 상자로 돌아왔습니다. 무엇을 할까요?");
                     System.out.println("1. 체력확인하기");
                     System.out.println("2. 낮잠 자기"); // 3시간 정도 지남
@@ -375,18 +403,30 @@ public class Main {
                         case 2:
                             // 낮잠자기
                             cat.napping();
-                            //Thread.sleep();
+                            // 시간 30초 지나기
+                            if(cat.name.equals("치즈 고양이")){
+                                System.out.println("식빵굽기");
+                                System.out.println("낮잠을 자도 시간이 줄어들지 않습니다");
+                            }
+                            else {
+                                timer.n = timer.n +30;
+                            }
 
                             break;
                         case 3:
                             // 깊은 잠자기
+                            // 하루 지나기
                             cat.sleeping();
+                            timer.day = timer.day +1;
 
                             break;
                     }
+                    boxMusic.close();
                     break;
                 // 게임설명 보기
                 case 4:
+                    Music explainMusic = new Music("Oneul+-+Happy+Avocado.mp3",true);
+                    explainMusic.start();
                     System.out.println("----------------게임설명----------------");
                     System.out.println("▶ 고양이가 되어 집사를 간택해보세요");
                     System.out.println("▶ 집사가 될 수 있는 마을 사람들은 지도에서 확인할 수 있습니다.");
@@ -396,9 +436,11 @@ public class Main {
                     System.out.println("▶ 마을을 돌아다니다 보면 체력이 떨어집니다.");
                     System.out.println("▶ 상자에서 낮잠을 자거나 간식을 먹으면 체력을 채울 수 있습니다.");
                     System.out.println("▶ 그럼 일주일동안 화이팅하세요!!");
+                    explainMusic.close();
                     break;
                 // 게임 종료하기
                 case 5:
+                    System.out.println("게임을 종료합니다.");
                     System.exit(0);
                     break;
             }

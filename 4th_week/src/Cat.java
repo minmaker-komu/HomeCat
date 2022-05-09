@@ -103,11 +103,11 @@ public class Cat extends Character{
     }
     // 낮잠자기
     public void napping(){
-        if(hp+30 > 100){
+        if(hp+20 > 100){
             hp = 100;
         }
         else{
-            hp = hp + 30;
+            hp = hp + 20;
         }
         System.out.println("　　　∧∧\n" +
                 "　　（*･ω･）\n" +
@@ -115,17 +115,18 @@ public class Cat extends Character{
                 "／　└-(＿＿＿_／\n" +
                 "￣￣￣￣￣￣￣");
         System.out.println("▶ 낮잠을 잤습니다. 고양이의 체력은 "+hp+"가 됐습니다.");
-
-        //Thread.sleep(300000);
     }
     // 깊은 잠자기
     public void sleeping(){
-        if(hp+50 > 100){
+        if(hp+60 > 100){
             hp = 100;
         }
         else{
-            hp = hp + 50;
+            hp = hp + 60;
         }
+        System.out.println("☁︎   ✩           ✩                 ☁︎\n" +
+                "            ☁︎             ☾\n" +
+                "☁︎            ✩    ☁︎            ✩      ☁︎");
         System.out.println("　　    ∧∧\n" +
                 "　　(*✪ω✪)\n" +
                 "　 ＿|　⊃／(＿＿_\n" +
@@ -152,6 +153,23 @@ public class Cat extends Character{
             }
         }
 
+    }
+
+    public void special_skill(){
+        while (hp>=100){
+            try {
+                if(hp == 100){
+                    //System.out.println("체력이 부족합니다.");
+                    break;
+                }
+                else {
+                    hp = hp + 1;
+                }
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
 }

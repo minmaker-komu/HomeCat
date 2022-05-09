@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class MiniGame3 {
-    public static boolean inputCheck;
+    public static boolean inputCheck = false;
     // 구구단 게임
     Scanner scan = new Scanner(System.in);
     Random random = new Random();
@@ -16,17 +16,17 @@ public class MiniGame3 {
         // 카운트 다운 스레드 실행
         gt.start();
         int answer = scan.nextInt();
-        if(inputCheck == false){
+        /*if(inputCheck == false){
             return;
         }
+        gt.interrupt();*/
         inputCheck = true;
         int c = a*b;
         if(answer == c){
             System.out.println("정답입니다!");
             result =1;
-        }
-        else{
-            System.out.println("틀렸습니다..");
+        } else{
+            System.out.println("아쉽네요..");
             System.out.println("답은"+c+"입니다");
             result =0;
         }
@@ -48,8 +48,11 @@ class GameTimer extends Thread{
                 e.printStackTrace();
             }
         }
-        System.out.println("시간이 초과되었습니다.");
-        System.out.println("졌습니다. 게임을 종료하려면 0을 눌러주세요");
+        if(MiniGame3.inputCheck==false){
+            System.out.println("시간이 초과되었습니다.");
+            System.out.println("0을 눌러주세요");
+        }
+
         return;
     }
 }

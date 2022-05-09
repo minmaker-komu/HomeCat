@@ -94,7 +94,7 @@ public class Npc extends Character{
                     }
                     else {
                         cat.giveGift();
-                        // heart = heart + item.getPower();
+                        //heart = heart + item.getPower();
                         heart = heart + 10;
                         System.out.println("▶ "+name + "의 호감도는 " + heart + "입니다.");
                     }
@@ -241,7 +241,6 @@ class worker extends Npc{
         item = new churu("츄르",30);
         cat.items.add(item);
         item.show_item();
-        System.out.println(33333);
         return item;
 
     }

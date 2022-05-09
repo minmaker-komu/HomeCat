@@ -7,18 +7,19 @@ public class ThreadTimer extends JFrame {
     JLabel date;
     int min, sec;
     int day=1;
+    int n;
 
     // 타이머 gui 설정
     ThreadTimer(){
         this.setTitle("하루는 2분 입니다.");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // 보더 레이아웃 10 10
+        // 타이머 레이아웃 짜기
         Container c = getContentPane();
         Panel p1 = new Panel();
         Panel p2 = new Panel();
         p1.setLayout(new FlowLayout(FlowLayout.CENTER,10,10));
         p2.setLayout(new FlowLayout(FlowLayout.CENTER,10,10));
-        c.setLayout(new GridLayout(2,1)s);
+        c.setLayout(new GridLayout(2,1));
         MyThread th = new MyThread();
         time = new JLabel();
         dayNight = new JLabel();
@@ -41,8 +42,6 @@ public class ThreadTimer extends JFrame {
         this.setSize(300,200);
         this.setVisible(true);
         this.setAlwaysOnTop(true);
-
-
         th.start();
     }
 
@@ -55,7 +54,7 @@ public class ThreadTimer extends JFrame {
     }
     class MyThread extends Thread{
         public void run(){
-            int n=0;
+            n=0;
             while (true){
                 n++;
                 sec = n%60;

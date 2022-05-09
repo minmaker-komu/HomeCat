@@ -1,4 +1,4 @@
-public abstract class Item {
+public abstract class Item extends Thread{
     // 아이템 이름이랑 power
     public String name;
     public int power;
@@ -20,6 +20,24 @@ public abstract class Item {
     public void show_item() {
         System.out.printf("아이템 : %s | 능력 : %d\n", name, power);
     }
+
+    // 아이템 내구도 줄어들기
+    /*public void run(){
+        while (power>=0){
+            try {
+                if(power <= 0){
+                    items.remove(pick);
+                    break;
+                }
+                else {
+                    power = power - 1;
+                }
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }*/
 }
 // 아이템 추상클래스를 상속받은 클래스들
 // 간식들

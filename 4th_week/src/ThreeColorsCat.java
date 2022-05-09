@@ -15,6 +15,7 @@ public class ThreeColorsCat extends Cat {
         hp = 60;
         System.out.println("▶ " + name + "를 선택하셨습니다!");
         System.out.println("▶ "+name+"는 "+skill+"를 할 수 있습니다!");
+        System.out.println("▶ "+name+"는 스스로 일정 체력을 자동 회복할 수 있습니다!");
         System.out.println("▶ "+name+"의 체력은 "+hp+"입니다!");
 
     }
@@ -42,9 +43,9 @@ public class ThreeColorsCat extends Cat {
     // 고양이 고유 기술 체력 회복
     // 건강한 고양이
     // 간식을 먹지 않아도 체력회복이 일정수준 가능하다.
-    public void healSkill(){
+    public void special_skill(){
         // 시간에 따라 회복
-        hp = hp + 5;
+        //hp = hp + 5;
 
     }
 }
