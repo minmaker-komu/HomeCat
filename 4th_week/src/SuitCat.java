@@ -47,6 +47,11 @@ public class SuitCat extends Cat{
         if(randSnack < 8){
             Music click = new Music("7. 뿅.mp3",false);
             click.start();
+            System.out.println("。　♡ 。　　♡。　　♡\n" +
+                    "♡。　＼　　｜　　／。　♡\n" +
+                    "　      골골송      \n" +
+                    "♡。　／　　｜　　＼。　♡\n" +
+                    "。　♡。 　　。　　♡。\n");
             System.out.println("운이 좋으시네요~!!");
             System.out.println("땅에서 간식을 발견했습니다!!");
             item = new jurkey("육포",20);
@@ -56,6 +61,11 @@ public class SuitCat extends Cat{
         else if (randSnack < 18 && randSnack >12){
             Music click2 = new Music("7. 뿅.mp3",false);
             click2.start();
+            System.out.println("。　♡ 。　　♡。　　♡\n" +
+                    "♡。　＼　　｜　　／。　♡\n" +
+                    "　      골골송      \n" +
+                    "♡。　／　　｜　　＼。　♡\n" +
+                    "。　♡。 　　。　　♡。\n");
             System.out.println("운이 좋으시네요~!!");
             System.out.println("땅에서 간식을 발견했습니다!!");
             item = new jurkey("츄르",20);

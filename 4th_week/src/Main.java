@@ -120,44 +120,45 @@ public class Main {
             case 1:
                 // 치즈 고양이
                 cat = new CheezeCat();
+                Music meow3 = new Music("meow2.mp3",false);
+                meow3.start();
                 System.out.println(
                         "　∧,,∧\n" +
                         "(๑＞◡╹๑)\n" +
                         "　(O O)\n" +
                         "　 し‐J\n");
                 cat.show();
-                Music meow3 = new Music("meow2.mp3",false);
-                meow3.start();
+
 
                 break;
             case 2:
                 // 삼색 고양이
                 cat = new ThreeColorsCat();
+                Music meow2 = new Music("meow2.mp3",false);
+                meow2.start();
                 System.out.println(
                                "　　　 ∧,,∧\n" +
                                "☆ヾ(ゝω・＊）찡긋-\n" +
                                "　　　(　 ⊂)\n" +
                                "　　　 し─Ｊ\n");
                 cat.show();
-                Music meow2 = new Music("meow2.mp3",false);
-                meow2.start();
+
 
                 cat.special_skill();;
                 break;
             case 3:
                 // 턱시도 고양이
                 cat = new SuitCat();
-                System.out.println(
-                    " 　　. ＼：／\n" +
-                            "　・･･･☆･･･・\n" +
-                            ". ⋀,,⋀. ∩.＼\n" +
-                            "(*・ω・)/\n" +
-                            ".(つ　 ﾉ\n" +
-                            ".しーＪ\n"
-                );
-                cat.show();
                 Music meow1 = new Music("meow1.mp3",false);
                 meow1.start();
+                System.out.println(" 　　. ＼：／\n" +
+                        "　・･･･☆･･･・\n" +
+                        ". ⋀,,⋀. ∩.＼\n" +
+                        "(*・ω・)/\n" +
+                        ".(つ　 ﾉ\n" +
+                        ".しーＪ\n");
+                cat.show();
+
 
 
         }
@@ -176,7 +177,7 @@ public class Main {
                 "▶ 마을 사람들의 호감도를 채우면 미니게임에 도전할 수 있습니다.\n\n" +
                 "▶ 미니게임을 성공하면 집사로 간택할 수 있습니다\n\n" +
                 "▶ 마을을 돌아다니다 보면 체력이 떨어집니다.\n\n" +
-                "▶ 상자에서 낮잠을 자거나 간식을 먹으면 체력을 채울 수 있습니다.\n\n" +
+                "▶ 상자에서 잠을 자거나 간식을 먹으면 체력을 채울 수 있습니다.\n\n" +
                 "▶ 그럼 일주일동안 화이팅하세요!! \n\n";
         for (int i = 0; i < explain.length(); i++) {
             Thread.sleep(50);
@@ -202,6 +203,11 @@ public class Main {
                         "　（´・ω・)つ＿ ∧\n" +
                         "　（つ　 / (・ω・｡)\n" +
                         "　 しーＪ　 (nnノ)\n");
+                System.out.println("。　♡ 。　　♡。　　♡\n" +
+                        "♡。　＼　　｜　　／。　♡\n" +
+                        "　 마을 고양이로 살아가세요~!\n" +
+                        "♡。　／　　｜　　＼。　♡\n" +
+                        "。　♡。 　　。　　♡。\n");
                 System.out.println("마을 고양이로 살아가세요~!");
                 System.exit(0);
             }
@@ -507,7 +513,11 @@ public class Main {
                             cat.napping();
                             // 시간 30초 지나기
                             if(cat.name.equals("치즈 고양이")){
-                                System.out.println("식빵굽기");
+                                System.out.println("。　♡ 。　　♡。　　♡\n" +
+                                        "♡。　＼　　｜　　／。　♡\n" +
+                                        "　      식빵굽기    \n" +
+                                        "♡。　／　　｜　　＼。　♡\n" +
+                                        "。　♡。 　　。　　♡。\n");
                                 System.out.println("낮잠을 자도 시간이 줄어들지 않습니다");
                             }
                             else {
@@ -529,16 +539,16 @@ public class Main {
                 case 4:
                     Music explainMusic = new Music("Oneul+-+Happy+Avocado.mp3",true);
                     explainMusic.start();
-                    System.out.println("========================게임설명===========================");
+                    System.out.println("═════════════════════════게임 설명════════════════════════\\n\\n");
                     System.out.println("▶ 고양이가 되어 집사를 간택해보세요");
                     System.out.println("▶ 집사가 될 수 있는 마을 사람들은 지도에서 확인할 수 있습니다.");
                     System.out.println("▶ 지도를 통해서 마을 사람들이 있는 곳에 가보세요!");
                     System.out.println("▶ 마을 사람들의 호감도를 채우면 미니게임에 도전할 수 있습니다.");
                     System.out.println("▶ 미니게임을 성공하면 집사로 간택할 수 있습니다.");
                     System.out.println("▶ 마을을 돌아다니다 보면 체력이 떨어집니다.");
-                    System.out.println("▶ 상자에서 낮잠을 자거나 간식을 먹으면 체력을 채울 수 있습니다.");
+                    System.out.println("▶ 상자에서 잠을 자거나 간식을 먹으면 체력을 채울 수 있습니다.");
                     System.out.println("▶ 그럼 일주일동안 화이팅하세요!!");
-                    System.out.println("==========================================================");
+                    System.out.println("═══════════════════════════════════════════════════════");
                     explainMusic.close();
                     break;
                 // 게임 종료하기
