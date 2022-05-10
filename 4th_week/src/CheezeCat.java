@@ -8,11 +8,11 @@ public class CheezeCat extends Cat{
         skill = "꾹꾹이";
         hp = 50;
         System.out.println("▶ " + name + "를 선택하셨습니다!");
-        Thread.sleep(100);
+        Thread.sleep(700);
         System.out.println("▶ "+name+"는 "+skill+"를 할 수 있습니다!");
-        Thread.sleep(100);
+        Thread.sleep(700);
         System.out.println("▶ "+name+"는 낮잠을 자도 시간이 줄어들지 않습니다!");
-        Thread.sleep(100);
+        Thread.sleep(700);
         System.out.println("▶ "+name+"의 체력은 "+hp+"입니다!");
 
     }

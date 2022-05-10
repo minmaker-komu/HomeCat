@@ -157,13 +157,17 @@ class fishman extends Npc{
         super(cat);
     }
     
-    public void show() {
+    public void show() throws InterruptedException {
         System.out.println("▶ 생선가게 입니다.");
+        Thread.sleep(700);
         System.out.println("▶ 어떤 아저씨가 생선을 들고 있습니다.");
+        Thread.sleep(700);
         name = "김종완";
         System.out.println("▶ 생선가게 주인 " + name + "입니다.");
+        Thread.sleep(700);
         snack = "생선";
         System.out.println("▶ "+name + "은 간식으로 " + snack + "을 가지고 있습니다.");
+        Thread.sleep(700);
     }
     // 미니게임
     public void gaming(){
@@ -193,13 +197,17 @@ class kid extends Npc{
         super(cat);
     }
 
-    public void show(){
+    public void show() throws InterruptedException {
         System.out.println("▶ 초등학교 앞 입니다.");
+        Thread.sleep(700);
         System.out.println("▶ 저기 누군가가 당신에게 오고 있습니다.");
+        Thread.sleep(700);
         name = "김성규";
         System.out.println("▶ 초등학생 "+name+"입니다.");
+        Thread.sleep(700);
         snack = "참치캔";
         System.out.println("▶ "+name+"은 간식으로 "+snack+"을 가지고 있습니다.");
+        Thread.sleep(700);
 
     }
     // 미니게임
@@ -228,14 +236,18 @@ class worker extends Npc{
         super(cat);
     }
 
-    public void show(){
+    public void show() throws InterruptedException {
 
         System.out.println("▶ 버스정류장입니다.");
+        Thread.sleep(700);
         System.out.println("▶ 누군가 서류가방을 들고 있습니다.");
+        Thread.sleep(700);
         name = "권현빈";
         System.out.println("▶ 회사원 "+name+"입니다.");
+        Thread.sleep(700);
         snack = "츄르";
         System.out.println("▶ "+name+"은 간식으로 "+snack+"을 가지고 있습니다.");
+        Thread.sleep(700);
     }
     // 미니게임
     public void gaming(){
@@ -265,14 +277,18 @@ class puppy extends Npc{
         super(cat);
     }
 
-    public void show(){
+    public void show() throws InterruptedException {
         System.out.println("▶ 분수대입니다.");
+        Thread.sleep(700);
         System.out.println("▶ 강아지가 물놀이를 하고 있습니다.");
+        Thread.sleep(700);
         name = "코코";
         System.out.println("U・ᴥ・U");
         System.out.println("▶ 강아지 "+name+"입니다.");
+        Thread.sleep(700);
         snack = "육포";
         System.out.println("▶ "+name+"은 간식으로 "+snack+"을 가지고 있습니다.");
+        Thread.sleep(700);
     }
     // 미니게임
     public void gaming(){

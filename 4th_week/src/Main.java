@@ -67,6 +67,7 @@ public class Main {
         Music beepMusic = new Music("beep.mp3",false);
         System.out.println("。┏━━┓ Ｏ\n" +
                 "┏┛ㅁㅁ┗┓⋆｡˚ ☁︎ ˚｡⋆｡˚☽˚｡⋆");
+        System.out.println("");
 
 
 
@@ -110,7 +111,7 @@ public class Main {
         System.out.println("2. 삼색 고양이   (=◉ᆽ◉=)");
         System.out.println("기본기술 : 배 보여주기 | 특수기술 : ??? | 체력 : 60 | 건강한 고양이\n");
         System.out.println("3. 턱시도 고양이  (=\uD83D\uDF66 ༝ \uD83D\uDF66=)");
-        System.out.println("기본기술 : 얼굴 비비기 | 특수기술 : ??? | 체력 : 40 | 운이 좋은 고양이");
+        System.out.println("기본기술 : 얼굴 비비기 | 특수기술 : ??? | 체력 : 40 | 운이 좋은 고양이\n");
 
         int answer_Cat = scan.nextInt();
         // 고양이 생성

@@ -8,11 +8,11 @@ public class SuitCat extends Cat{
         skill = "얼굴 비비기";
         hp = 40;
         System.out.println("▶ " + name + "를 선택하셨습니다!");
-        Thread.sleep(100);
+        Thread.sleep(700);
         System.out.println("▶ "+name+"는 "+skill+"를 할 수 있습니다!");
-        Thread.sleep(100);
+        Thread.sleep(700);
         System.out.println("▶ "+name+"는 일정 확률로 간식을 얻을 수 있습니다!");
-        Thread.sleep(100);
+        Thread.sleep(700);
         System.out.println("▶ "+name+"의 체력은 "+hp+"입니다!");
 
     }
