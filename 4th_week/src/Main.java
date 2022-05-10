@@ -10,6 +10,7 @@ public class Main {
         Music introMusic = new Music("introMusic.mp3",true);
         introMusic.start();
         //게임시작
+        System.out.println("\n\n\n");
         String start = ("██╗  ██╗ ██████╗ ███╗   ███╗███████╗     ██████╗ █████╗ ████████╗\n" +
                 "██║  ██║██╔═══██╗████╗ ████║██╔════╝    ██╔════╝██╔══██╗╚══██╔══╝\n" +
                 "███████║██║   ██║██╔████╔██║█████╗      ██║     ███████║   ██║   \n" +
@@ -93,11 +94,17 @@ public class Main {
         Thread.sleep(1000);
         System.out.println("가까이 가보니 고양이 세마리가 있네요.");
 
-        System.out.println("　 ＿＿ ∧ ∧        　   ＿＿ ∧ ∧              ＿＿ ∧ ∧\n" +
+        /*System.out.println("　 ＿＿ ∧ ∧        　   ＿＿ ∧ ∧              ＿＿ ∧ ∧\n" +
                            " ／＼　 (*ﾟ∀ﾟ)＼       ／＼　 (・ω・)＼        ／＼　 (*ﾟーﾟ)＼\n" +
                            " ＼／|￣￣∪ ∪￣|＼      ＼／|￣￣∪ ∪￣|＼       ＼／|￣￣∪ ∪￣|＼\n" +
                            "　＼|　　〓〓　 |         ＼|　　〓〓　|          ＼|　　〓〓　|\n" +
-                           "　　 ￣￣￣￣￣       　　   ￣￣￣￣￣              ￣￣￣￣￣");
+                           "　　 ￣￣￣￣￣       　　   ￣￣￣￣￣              ￣￣￣￣￣");*/
+
+        System.out.println("　 ＿＿ ∧ ∧        　     ＿＿∧    ∧            ＿＿∧    ∧\n" +
+                " ／＼　 (*ﾟーﾟ)＼       ／＼(=◉ᆽ◉=)＼        ／＼(=\uD83D\uDF66 ༝ \uD83D\uDF66=)＼\n" +
+                " ＼／|￣￣∪ ∪￣|＼      ＼／|￣￣∪ ∪￣|＼       ＼／|￣￣∪ ∪￣|＼\n" +
+                "　＼|　　〓〓　 |         ＼|　　〓〓　|          ＼|　　〓〓　|\n" +
+                "　　 ￣￣￣￣￣       　　   ￣￣￣￣￣              ￣￣￣￣￣");
 
         Thread.sleep(1000);
         System.out.println("이 중 한마리를 골라봅시다!");
@@ -106,7 +113,7 @@ public class Main {
         Thread.sleep(100);
         System.out.println("신중하게 골라주세요\n");
         Thread.sleep(300);
-        System.out.println("1. 치즈 고양이   (＾• ω •＾)");
+        System.out.println("1. 치즈 고양이   (*ﾟーﾟ)");
         System.out.println("기본기술 : 꾹꾹이 | 특수기술 : ??? | 체력 : 50 | 게으른 고양이\n");
         System.out.println("2. 삼색 고양이   (=◉ᆽ◉=)");
         System.out.println("기본기술 : 배 보여주기 | 특수기술 : ??? | 체력 : 60 | 건강한 고양이\n");
@@ -129,7 +136,6 @@ public class Main {
                         "　 し‐J\n");
                 cat.show();
 
-
                 break;
             case 2:
                 // 삼색 고양이
@@ -142,8 +148,6 @@ public class Main {
                                "　　　(　 ⊂)\n" +
                                "　　　 し─Ｊ\n");
                 cat.show();
-
-
                 cat.special_skill();;
                 break;
             case 3:
@@ -158,8 +162,7 @@ public class Main {
                         ".(つ　 ﾉ\n" +
                         ".しーＪ\n");
                 cat.show();
-
-
+                break;
 
         }
         // npc 생성
@@ -213,7 +216,7 @@ public class Main {
             }
             Music menuMusic = new Music("Pepperoni+Pizza.mp3",true);
             menuMusic.start();
-            Thread.sleep(100);
+            //Thread.sleep(100);
             System.out.println("╔═══*.·:·.☽✧  ✦  ✧☾.·:·.*═══╗");
             System.out.println("       1. 지도열기");
             System.out.println("       2. 아이템 주머니 열기");
