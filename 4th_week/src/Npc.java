@@ -68,12 +68,17 @@ public class Npc extends Character{
             System.out.println("5. 미니게임 도전하기");
             System.out.println("6. 나가기");
             int answer_npc = scan.nextInt();
+
             switch (answer_npc){
                 case 1:
+                    Music click16 = new Music("086_팝.mp3",false);
+                    click16.start();
                     // 호감도 보여주기
                     System.out.println("▶ 현재 " + name + "의 호감도는 " + heart + "입니다.");
                     break;
                 case 2:
+                    Music click17 = new Music("086_팝.mp3",false);
+                    click17.start();
                     // 기술쓰기(애정표현하기)
                     // 호감도를 올릴 수 있음
                     cat.heartAttack();
@@ -86,6 +91,8 @@ public class Npc extends Character{
                     }
                     break;
                 case 3:
+                    Music click18 = new Music("086_팝.mp3",false);
+                    click18.start();
                     // 선물주기
                     if(heart < 50){
                         System.out.println("▶ 선물주기는 호감도가 50이상 되어야줄 수 있습니다.");
@@ -100,6 +107,8 @@ public class Npc extends Character{
                     }
                     break;
                 case 4:
+                    Music click19 = new Music("086_팝.mp3",false);
+                    click19.start();
                     // 간식 요청하기
                     if(heart < 40){
                         System.out.println("▶ 호감도 40이상부터 간식을 요청할 수 있습니다.");
@@ -122,15 +131,19 @@ public class Npc extends Character{
 
                     break;
                 case 5:
+                    Music click20 = new Music("086_팝.mp3",false);
+                    click20.start();
                     // 미니게임 도전하기
-                    // 호감도 60이상일때 가능
-                    if (heart >= 60) {
+                    // 호감도 80이상일때 가능
+                    if (heart >= 80) {
                         gaming();
                     } else {
-                        System.out.println("▶ 호감도 60이상부터 미니게임에 도전할 수 있습니다.");
+                        System.out.println("▶ 호감도 80이상부터 미니게임에 도전할 수 있습니다.");
                     }
                     break;
                 case 6:
+                    Music click21 = new Music("086_팝.mp3",false);
+                    click21.start();
                     break;
             }
             if (answer_npc == 6) {

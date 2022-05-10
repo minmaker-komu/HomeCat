@@ -5,7 +5,7 @@ public class Character extends Thread{
     // 이름
     public String name;
     // 캐릭터 소개
-    public void show(){
+    public void show() throws InterruptedException {
 
     }
     public void run(){

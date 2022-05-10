@@ -3,12 +3,16 @@ import java.util.Random;
 public class SuitCat extends Cat{
 
     @Override
-    public void show() {
+    public void show() throws InterruptedException {
         name = "턱시도 고양이";
         skill = "얼굴 비비기";
         hp = 40;
         System.out.println("▶ " + name + "를 선택하셨습니다!");
+        Thread.sleep(100);
         System.out.println("▶ "+name+"는 "+skill+"를 할 수 있습니다!");
+        Thread.sleep(100);
+        System.out.println("▶ "+name+"는 일정 확률로 간식을 얻을 수 있습니다!");
+        Thread.sleep(100);
         System.out.println("▶ "+name+"의 체력은 "+hp+"입니다!");
 
     }
@@ -37,11 +41,12 @@ public class SuitCat extends Cat{
     // 운이 좋은 고양이
     // 호감도를 높이지 않아도 작은 간식을 얻을 수 있다.
     public void special_skill(){
-        System.out.println("$$$$$$");
         // 땅에서 간식 줍기
         Random rand = new Random();
         int randSnack = rand.nextInt(20);
         if(randSnack < 8){
+            Music click = new Music("7. 뿅.mp3",false);
+            click.start();
             System.out.println("운이 좋으시네요~!!");
             System.out.println("땅에서 간식을 발견했습니다!!");
             item = new jurkey("육포",20);
@@ -49,6 +54,8 @@ public class SuitCat extends Cat{
             item.show_item();
         }
         else if (randSnack < 18 && randSnack >12){
+            Music click2 = new Music("7. 뿅.mp3",false);
+            click2.start();
             System.out.println("운이 좋으시네요~!!");
             System.out.println("땅에서 간식을 발견했습니다!!");
             item = new jurkey("츄르",20);

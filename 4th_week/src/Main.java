@@ -1,3 +1,4 @@
+import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -15,12 +16,14 @@ public class Main {
                 "██║  ██║╚██████╔╝██║ ╚═╝ ██║███████╗    ╚██████╗██║  ██║   ██║   \n" +
                 "╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝     ╚═════╝╚═╝  ╚═╝   ╚═╝");
         // 음악 출처 : 오늘의 일기
-        Music introMusic = new Music("Oneul+-+Happy+Avocado.mp3",true);
+        //Music introMusic = new Music("Oneul+-+Happy+Avocado.mp3",true);
+        Music introMusic = new Music("introMusic.mp3",true);
         introMusic.start();
-
 
         Thread.sleep(1000);
         System.out.println("▶ 도전! 집냥이");
+        Thread.sleep(1000);
+        System.out.println("▶ 고양이가 되어 집사를 간택해보세요");
         Thread.sleep(1000);
         System.out.println("▶ 고양이들이 사는 마을로 출발합니다!");
         Thread.sleep(25);
@@ -57,6 +60,10 @@ public class Main {
         Thread.sleep(1000);
         System.out.println("");
         String loading;
+        Music beepMusic = new Music("beep.mp3",false);
+        beepMusic.start();
+
+
         loading ="▶▶▶▶▶▶▶▶▶▶▶▶▶▶마을 가는 중▶▶▶▶▶▶▶▶▶▶▶▶▶▶▶";
 
         for (int i = 0; i < loading.length(); i++) { // 로딩 효과 스레드
@@ -70,23 +77,27 @@ public class Main {
         Thread.sleep(100);
         System.out.println("엇 저기 상자에 무언가가 있는 것 같습니다.");
         // 고양이 고르기
+        Thread.sleep(500);
         System.out.println("　 ＿＿ ∧ ∧\n" +
                 " ／＼　 (*ﾟ∀ﾟ)＼\n" +
                 " ＼／|￣￣∪ ∪￣|＼\n" +
                 "　＼|　　〓〓　 |\n" +
                 "　　 ￣￣￣￣￣");
+        Thread.sleep(100);
         System.out.println("가까이 가보니 고양이 세마리가 있네요.");
         Thread.sleep(100);
         System.out.println("이 중 한마리를 골라봅시다!");
         Thread.sleep(100);
         System.out.println("고양이 별로 행동 특성이 다릅니다.");
-        System.out.println("신중하게 생각해주세요");
+        Thread.sleep(100);
+        System.out.println("신중하게 생각해주세요\n\n");
+        Thread.sleep(300);
         System.out.println("1. 치즈 고양이   (＾• ω •＾)");
-        System.out.println("기본기술 : 꾹꾹이, 특수기술 : ???, 체력 : 50, 게으른 고양이");
+        System.out.println("기본기술 : 꾹꾹이 | 특수기술 : ??? | 체력 : 50 | 게으른 고양이\n\n");
         System.out.println("2. 삼색 고양이   (=◉ᆽ◉=)");
-        System.out.println("기본기술 : 배 보여주기, 특수기술 : ???, 체력 : 50, 건강한 고양이");
+        System.out.println("기본기술 : 배 보여주기 | 특수기술 : ??? | 체력 : 60 | 건강한 고양이\n\n");
         System.out.println("3. 턱시도 고양이  (=\uD83D\uDF66 ༝ \uD83D\uDF66=)");
-        System.out.println("기본기술 : 얼굴 비비기, 특수기술 : ???, 체력 : 50, 운이 좋은 고양이");
+        System.out.println("기본기술 : 얼굴 비비기 | 특수기술 : ??? | 체력 : 40 | 운이 좋은 고양이");
 
         int answer_Cat = scan.nextInt();
         // 고양이 생성
@@ -114,7 +125,8 @@ public class Main {
         worker worker = new worker(cat);
         puppy puppy = new puppy(cat);
         // 게임 설명 타이핑 효과
-        String explain = "----------------게임설명---------------- \n\n"+
+        System.out.println("\n\n");
+        String explain = "================게임 설명================== \n\n"+
                 "▶ 고양이가 되어 집사를 간택해보세요\n\n"+
                 "▶ 집사가 될 수 있는 마을 사람들은 지도에서 확인할 수 있습니다 \n\n"+
                 "▶ 지도를 통해서 마을 사람들이 있는 곳에 가보세요!\n\n"+
@@ -123,7 +135,7 @@ public class Main {
                 "▶ 마을을 돌아다니다 보면 체력이 떨어집니다.\n\n" +
                 "▶ 상자에서 낮잠을 자거나 간식을 먹으면 체력을 채울 수 있습니다.\n\n" +
                 "▶ 그럼 일주일동안 화이팅하세요!! \n\n"+
-                "------------------------------------- \n\n";
+                "============================================= \n\n";
         for (int i = 0; i < explain.length(); i++) {
             Thread.sleep(50);
             System.out.print(explain.charAt(i));
@@ -139,12 +151,20 @@ public class Main {
             if(timer.day()==7) {
                 System.out.println("\n\n\n");
                 System.out.println("일주일이 지났습니다.\n\n");
+                Thread.sleep(1000);
                 System.out.println("고양이는 집사를 찾지 못했습니다.");
-                System.out.println("마을 고양이로 살아가세용");
+                Thread.sleep(1000);
+                System.out.println("\n" +
+                        "　　∧＿∧ 쓰담쓰담\n" +
+                        "　（´・ω・)つ＿ ∧\n" +
+                        "　（つ　 / (・ω・｡)\n" +
+                        "　 しーＪ　 (nnノ)\n");
+                System.out.println("마을 고양이로 살아가세요~!");
                 System.exit(0);
             }
             Music menuMusic = new Music("Pepperoni+Pizza.mp3",true);
             menuMusic.start();
+            Thread.sleep(100);
             System.out.println("╔════   •| ✿ |•   ════╗");
             System.out.println("    1. 지도열기");
             System.out.println("    2. 아이템 주머니 열기");
@@ -154,9 +174,13 @@ public class Main {
             System.out.println("╚════   •| ✿ |•   ════╝");
             int answer_menu = scan.nextInt();
             menuMusic.close();
+            // 선택 효과음
+            Music click1 = new Music("086_팝.mp3",false);
+            click1.start();
             switch (answer_menu){
                 // 지도 열기
                 case 1:
+                    TownMap map = new TownMap();
                     System.out.println("▶ 지도를 열었다.");
                     System.out.println("▶ 어디로 갈까?");
                     if(cat.name.equals("턱시도 고양이")){
@@ -170,15 +194,23 @@ public class Main {
                     System.out.println("------------------");
 
                     int answer_place = scan.nextInt();
+                    // 선택효과음
+                    Music click2 = new Music("086_팝.mp3",false);
+                    click2.start();
+
                     switch (answer_place){
                         case 1:
                             Music storeMusic = new Music("Dance+Dance.mp3",true);
                             storeMusic.start();
                             // 상점가
-                            System.out.println("▶ 상점가입니다.");
-                            System.out.println("1. 선물 찾기");
-                            System.out.println("2. 그냥 돌아다니기");
+                            map = new store();
+                            map.show_map();
+                            //System.out.println("▶ 상점가입니다.");
+                            //System.out.println("1. 선물 찾기");
+                            //System.out.println("2. 그냥 돌아다니기");
                             int answer_stores = scan.nextInt();
+                            Music click3 = new Music("086_팝.mp3",false);
+                            click3.start();
                             switch (answer_stores){
                                 case 1:
                                     System.out.println("바닥에 무언가가 떨어져있습니다.");
@@ -186,6 +218,9 @@ public class Main {
                                     System.out.println("1. 네");
                                     System.out.println("2. 아니요");
                                     int answer_pick = scan.nextInt();
+                                    Music click4 = new Music("086_팝.mp3",false);
+                                    click4.start();
+
                                     if(answer_pick == 1){
                                         cat.pickGift();
                                     }
@@ -199,6 +234,8 @@ public class Main {
                                     System.out.println("1. 네");
                                     System.out.println("2. 아니오");
                                     int answer_fishShop = scan.nextInt();
+                                    Music click5 = new Music("086_팝.mp3",false);
+                                    click5.start();
                                     switch (answer_fishShop){
                                         case 1:
                                             // 생선가게아저씨
@@ -221,6 +258,8 @@ public class Main {
                             System.out.println("1. 선물 찾기");
                             System.out.println("2. 그냥 돌아다니기");
                             int answer_house = scan.nextInt();
+                            Music click6 = new Music("086_팝.mp3",false);
+                            click6.start();
                             switch (answer_house){
                                 case 1:
                                     System.out.println("바닥에 무언가가 떨어져있습니다.");
@@ -228,6 +267,8 @@ public class Main {
                                     System.out.println("1. 네");
                                     System.out.println("2. 아니요");
                                     int answer_pick = scan.nextInt();
+                                    Music click7 = new Music("086_팝.mp3",false);
+                                    click7.start();
                                     if(answer_pick == 1){
                                         cat.pickGift();
                                     }
@@ -241,6 +282,8 @@ public class Main {
                                     System.out.println("1. 네");
                                     System.out.println("2. 아니오");
                                     int answer_school = scan.nextInt();
+                                    Music click8 = new Music("086_팝.mp3",false);
+                                    click8.start();
                                     switch (answer_school){
                                         case 1:
                                             // 초등학생
@@ -263,6 +306,8 @@ public class Main {
                             System.out.println("1. 선물 찾기");
                             System.out.println("2. 그냥 돌아다니기");
                             int answer_town = scan.nextInt();
+                            Music click9 = new Music("086_팝.mp3",false);
+                            click9.start();
                             switch (answer_town){
                                 case 1:
                                     System.out.println("바닥에 무언가가 떨어져있습니다.");
@@ -270,6 +315,8 @@ public class Main {
                                     System.out.println("1. 네");
                                     System.out.println("2. 아니요");
                                     int answer_pick = scan.nextInt();
+                                    Music click10 = new Music("086_팝.mp3",false);
+                                    click10.start();
                                     if(answer_pick == 1){
                                         cat.pickGift();
                                     }
@@ -283,6 +330,8 @@ public class Main {
                                     System.out.println("1. 네");
                                     System.out.println("2. 아니오");
                                     int answer_busStop = scan.nextInt();
+                                    Music click11 = new Music("086_팝.mp3",false);
+                                    click11.start();
                                     switch (answer_busStop){
                                         case 1:
                                             // 회사원
@@ -306,6 +355,8 @@ public class Main {
                             System.out.println("1. 선물 찾기");
                             System.out.println("2. 그냥 돌아다니기");
                             int answer_park = scan.nextInt();
+                            Music click12 = new Music("086_팝.mp3",false);
+                            click12.start();
                             switch (answer_park){
                                 case 1:
                                     System.out.println("바닥에 무언가가 떨어져있습니다.");
@@ -326,6 +377,8 @@ public class Main {
                                     System.out.println("1. 네");
                                     System.out.println("2. 아니오");
                                     int answer_fountain = scan.nextInt();
+                                    Music click13 = new Music("086_팝.mp3",false);
+                                    click13.start();
                                     switch (answer_fountain){
                                         case 1:
                                             // 강아지
@@ -350,6 +403,8 @@ public class Main {
                     System.out.println("1. 간식 확인하기");
                     System.out.println("2. 선물 확인하기");
                     int pocket = scan.nextInt();
+                    Music click = new Music("086_팝.mp3",false);
+                    click.start();
                     switch (pocket){
                         case 1:
                             cat.show_itemList();
@@ -361,6 +416,8 @@ public class Main {
                                 System.out.println("1. 네");
                                 System.out.println("2. 아니요");
                                 int answer_item = scan.nextInt();
+                                Music click14 = new Music("086_팝.mp3",false);
+                                click14.start();
                                 if(answer_item == 1){
                                     // 아이템 사용하기
                                     cat.usingItem();
@@ -395,6 +452,8 @@ public class Main {
                     System.out.println("2. 낮잠 자기"); // 3시간 정도 지남
                     System.out.println("3. 깊은 잠자기"); // 다음날로 바뀜
                     int answer_sleep = scan.nextInt();
+                    Music click15 = new Music("086_팝.mp3",false);
+                    click15.start();
                     switch (answer_sleep){
                         case 1:
                             // 체력확인하기
@@ -427,7 +486,7 @@ public class Main {
                 case 4:
                     Music explainMusic = new Music("Oneul+-+Happy+Avocado.mp3",true);
                     explainMusic.start();
-                    System.out.println("----------------게임설명----------------");
+                    System.out.println("========================게임설명===========================");
                     System.out.println("▶ 고양이가 되어 집사를 간택해보세요");
                     System.out.println("▶ 집사가 될 수 있는 마을 사람들은 지도에서 확인할 수 있습니다.");
                     System.out.println("▶ 지도를 통해서 마을 사람들이 있는 곳에 가보세요!");
@@ -436,6 +495,7 @@ public class Main {
                     System.out.println("▶ 마을을 돌아다니다 보면 체력이 떨어집니다.");
                     System.out.println("▶ 상자에서 낮잠을 자거나 간식을 먹으면 체력을 채울 수 있습니다.");
                     System.out.println("▶ 그럼 일주일동안 화이팅하세요!!");
+                    System.out.println("==========================================================");
                     explainMusic.close();
                     break;
                 // 게임 종료하기

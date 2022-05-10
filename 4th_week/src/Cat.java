@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
 
-public class Cat extends Character{
+public class Cat extends Character implements Runnable{
     // 아이템 전역변수
     Item item;
     // 체력
@@ -40,6 +40,8 @@ public class Cat extends Character{
         // 1,2,3중 랜덤으로 하나 골라서 나오게 선물 상자에 넣는다.
         int what = random.nextInt(30)+1;
         if(what<30){
+            Music click = new Music("7. 뿅.mp3",false);
+            click.start();
             item = new stone("돌멩이",10);
             gifts.add(item);
             item.show_item();

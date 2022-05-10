@@ -17,8 +17,8 @@ public class Music extends Thread {
         // 곡의 제목과 무한반복인지의 유무
         try {// 예외처리
             this.isLoop = isLoop;
-            file = new File("C:/Users/minyeong/Desktop/mp3/"+name);
-            //file = new File((Main.class.getResource("../music/" + name)).toURI());
+            //file = new File("C:/Users/minyeong/Desktop/mp3/"+name);
+            file = new File((Main.class.getResource("./music/" + name)).toURI());
             fis = new FileInputStream(file);
             bis = new BufferedInputStream(fis);
             player = new Player(bis);
@@ -28,11 +28,11 @@ public class Music extends Thread {
         }
     }
 
-    public int getTime() {// 실행되고 있는 음악이 어떤 위치인지 알려줌
+    /*public int getTime() {// 실행되고 있는 음악이 어떤 위치인지 알려줌
         if(player == null)
             return 0;
         return player.getPosition();
-    }
+    }*/
 
     public void close() { // 음악 종료
         isLoop = false;

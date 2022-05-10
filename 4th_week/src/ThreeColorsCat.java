@@ -9,13 +9,16 @@ public class ThreeColorsCat extends Cat {
     }*/
 
     @Override
-    public void show() {
+    public void show() throws InterruptedException {
         name = "삼색 고양이";
         skill = "배 보여주기";
         hp = 60;
         System.out.println("▶ " + name + "를 선택하셨습니다!");
+        Thread.sleep(100);
         System.out.println("▶ "+name+"는 "+skill+"를 할 수 있습니다!");
+        Thread.sleep(100);
         System.out.println("▶ "+name+"는 스스로 일정 체력을 자동 회복할 수 있습니다!");
+        Thread.sleep(100);
         System.out.println("▶ "+name+"의 체력은 "+hp+"입니다!");
 
     }
