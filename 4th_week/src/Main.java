@@ -232,7 +232,6 @@ public class Main {
             switch (answer_menu){
                 // 지도 열기
                 case 1:
-                    TownMap map = new TownMap();
                     System.out.println("▶ 지도를 열었다.");
                     System.out.println("▶ 어디로 갈까?");
                     if(cat.name.equals("턱시도 고양이")){
@@ -254,15 +253,13 @@ public class Main {
                         case 1:
                             Music storeMusic = new Music("Dance+Dance.mp3",true);
                             storeMusic.start();
-                            // 상점가
-                            map = new store();
-                            map.show_map();
-                            //System.out.println("▶ 상점가입니다.");
-                            //System.out.println("1. 선물 찾기");
-                            //System.out.println("2. 그냥 돌아다니기");
+                            System.out.println("▶ 상점가입니다.");
+                            System.out.println("1. 선물 찾기");
+                            System.out.println("2. 그냥 돌아다니기");
                             int answer_stores = scan.nextInt();
                             Music click3 = new Music("086_팝.mp3",false);
                             click3.start();
+
                             switch (answer_stores){
                                 case 1:
                                     System.out.println("바닥에 무언가가 떨어져있습니다.");
@@ -329,6 +326,11 @@ public class Main {
                                     }
                                     break;
                                 case 2:
+                                    if(timer.min == 1){
+                                        System.out.println("밤에는 주택가에 아무도 없습니다");
+                                        System.out.println("낮에 와주세요");
+                                        break;
+                                    }
                                     System.out.println("▶ 학교 앞에 아이가 있습니다.");
                                     System.out.println("▶ 학교 앞으로 가겠습니까?");
                                     System.out.println("1. 네");
@@ -377,6 +379,11 @@ public class Main {
                                     }
                                     break;
                                 case 2:
+                                    if(timer.min == 0){
+                                        System.out.println("낮에는 도심가에 말을 걸 사람이 없습니다 다들 회사에 있나봐요");
+                                        System.out.println("밤에 와주세요");
+                                        break;
+                                    }
                                     System.out.println("▶ 버스정류장에 누군가가 있습니다.");
                                     System.out.println("▶ 버스정류장으로 가겠습니까?");
                                     System.out.println("1. 네");

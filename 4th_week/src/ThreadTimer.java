@@ -45,9 +45,9 @@ public class ThreadTimer extends JFrame {
         th.start();
     }
 
-    public int time() {
+    /*public int time() {
         return min;
-    }
+    }*/
 
     public int day() {
         return day;

@@ -28,11 +28,6 @@ public class Music extends Thread {
         }
     }
 
-    /*public int getTime() {// 실행되고 있는 음악이 어떤 위치인지 알려줌
-        if(player == null)
-            return 0;
-        return player.getPosition();
-    }*/
 
     public void close() { // 음악 종료
         isLoop = false;

@@ -81,6 +81,7 @@ public class Npc extends Character{
                     click17.start();
                     // 기술쓰기(애정표현하기)
                     // 호감도를 올릴 수 있음
+                    System.out.println("$$$$$");
                     cat.heartAttack();
                     if(cat.result ==1 ){
                         heart = heart + cat.heartUp;
