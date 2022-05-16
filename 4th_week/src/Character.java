@@ -11,4 +11,6 @@ public class Character extends Thread{
     public void run(){
 
     }
+
+
 }
